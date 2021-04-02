@@ -44,7 +44,7 @@ const styles = {
     height: "100%",
   },
   resContent: {
-    backgroundColor: "rgba(20,31,42, 0.98)",
+    backgroundColor: "rgba(20,31,42, 0.7)",
     height: "80vh",
     display: "flex",
     justifyContent: "center",

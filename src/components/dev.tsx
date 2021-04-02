@@ -33,7 +33,6 @@ const Dev = (props: DevTypes) => {
         >
           <Toggle
             className="custom-classname"
-            defaultChecked={false}
             checked={dev}
             aria-label="No label tag"
             onChange={() => handleEditSave()}
@@ -88,6 +87,7 @@ const Dev = (props: DevTypes) => {
                 <div style={styles.ticker}>
                   <span style={styles.tickerLabel}>{val.label}</span>
                 </div>
+                {/* <hr style={{ height: "1px", width: 100, color: "#ccc" }} /> */}
               </div>
             );
           })}
@@ -99,11 +99,12 @@ const Dev = (props: DevTypes) => {
 
 const styles = {
   devContainer: {
-    backgroundColor: "rgba(20,31,42, 0.97)",
+    backgroundColor: "rgba(20,31,42, 0.7)",
     height: "100%",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    // width: 200,
   },
   devComp: {
     width: "100%",
@@ -128,7 +129,7 @@ const styles = {
     borderBottom: "5px solid hotpink",
     justifyContent: "center",
     alignItems: "center",
-    width: "100%",
+    width: "100px",
     height: "100%",
   },
   redbar: {
@@ -141,7 +142,7 @@ const styles = {
   cryptos: {
     height: 70,
     color: "white",
-    borderBottom: "1px solid rgba(26,31,42, 1)",
+    borderBottom: "1px solid rgba(10,31,42, 0.3)",
     alignItems: "center",
     // justifyContent: "center",
     display: "flex",

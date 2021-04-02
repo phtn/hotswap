@@ -1,68 +1,66 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Select from "react-select";
 import cryptoList from "./cryptoList";
 import Dev from "./components/dev";
+import Core from "./core";
 import Results from "./components/res";
+import Sun from "./sun.svg";
+
+// const WIDTH = window.innerWidth;
 
 function App() {
   const [state, setState] = useState(0);
+  const [mobile, setMobile] = useState(false);
   const [dev, setDev] = useState(false);
+  const [height, setHeight] = useState(global.innerHeight);
+  const [width, setWidth] = useState(global.innerWidth);
 
+  useEffect(() => {
+    // console.log(WIDTH);
+
+    const handleWidthResize = () => setWidth(global.innerWidth);
+    global.addEventListener("resize", handleWidthResize);
+
+    if (width >= 812) {
+      setMobile(!mobile);
+    } else {
+      setMobile(false);
+    }
+
+    return () => {
+      global.removeEventListener("resize", handleWidthResize);
+    };
+  }, [width]);
   return (
     <div style={{ height: window.innerHeight - 100 }}>
       <div
         style={{
           // alignItems: "center",
+          backgroundImage: `url(${Sun})`,
+          // backgroundRepeat: "no-repeat",
+
           justifyContent: "center",
           display: "flex",
+          flex: "3",
         }}
       >
-        <Dev dev={dev} setDev={setDev} />
+        {mobile ? <Dev dev={dev} setDev={setDev} /> : null}
 
-        <div style={{ backgroundColor: "rgba(20,31,42, 1.0)" }}>
-          <div style={styles.navbar}>
-            <div style={styles.header}>
-              hot<span style={{ fontWeight: "bolder" }}>Swap</span>
-            </div>
-          </div>
-          {/* <p> test </p> */}
-
-          <div style={styles.select}>
-            <div style={styles.one}>
-              <Select options={cryptoList} />
-              <div>
-                <button
-                  style={styles.allIn}
-                  onClick={() => setState(state + 1)}
-                >
-                  all in
-                  {state}
-                </button>
-              </div>
-              <Select options={cryptoList} />
-              <div>
-                <button
-                  style={styles.allIn}
-                  onClick={() => setState(state + 1)}
-                >
-                  buy
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <Core styles={styles} />
         <Results dev={dev} />
       </div>
 
       {/* FOOTER */}
-      <div style={{ height: "94px", backgroundColor: "#333" }}>footer</div>
+      <div style={{ height: "94px", backgroundColor: "transparent" }}>
+        footer
+      </div>
     </div>
   );
 }
 
 const styles = {
   header: {
-    width: 800,
+    width: "100%",
     height: "100%",
     fontSize: 16,
     // fontFamily: "Courier New",
@@ -97,7 +95,6 @@ const styles = {
   },
   results: {
     display: "flex",
-    backgroundColor: "black",
     width: "100%",
     height: "100vh",
   },
@@ -106,10 +103,6 @@ const styles = {
   },
   off: {
     color: "#eee",
-  },
-  devContent: {
-    margin: 12,
-    border: "1px solid green",
   },
 };
 
