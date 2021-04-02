@@ -1,0 +1,1 @@
+export const v: Object = { n: 1}
