@@ -16,9 +16,9 @@ const Dev = (props: DevTypes) => {
     setDev(!dev);
   };
   return (
-    <div style={dev ? styles.toolbar : styles.redbar}>
+    <div style={styles.redbar}>
       <div style={styles.nav}>
-        <div style={{ width: "200px", margin: "0px 10px" }}>
+        <div style={{ width: "150px", margin: "0px 10px" }}>
           <Select options={cryptoList} />
         </div>
         <div style={{ flex: 1 }}></div>
@@ -31,7 +31,7 @@ const Dev = (props: DevTypes) => {
             // width: 25,
           }}
         >
-          <Toggle
+          {/* <Toggle
             className="custom-classname"
             checked={dev}
             aria-label="No label tag"
@@ -57,7 +57,7 @@ const Dev = (props: DevTypes) => {
               ),
             }}
             // style={{ backgroundColor: "black", marginRight: 10 }}
-          />
+          /> */}
           <span
             style={{
               marginLeft: 20,
@@ -68,9 +68,9 @@ const Dev = (props: DevTypes) => {
               cursor: "pointer",
               width: 25,
             }}
-            onClick={() => handleEditSave()}
+            // onClick={() => handleEditSave()}
           >
-            {dev ? "Save" : "Edit"}
+            Add
           </span>
         </div>
       </div>
@@ -84,10 +84,28 @@ const Dev = (props: DevTypes) => {
                 <div style={styles.icon}>
                   <img src={val.icon} />
                 </div>
-                <div style={styles.ticker}>
-                  <span style={styles.tickerLabel}>{val.label}</span>
+                <div style={styles.crypto}>
+                  <span style={styles.cryptolabel}>{val.label}</span>
                 </div>
                 {/* <hr style={{ height: "1px", width: 100, color: "#ccc" }} /> */}
+                <div style={{ flex: 1, display: "flex", width: "100%" }}></div>
+                <div
+                  style={
+                    {
+                      // border: "1px solid pink",
+                    }
+                  }
+                >
+                  <input
+                    type="number"
+                    name="amount"
+                    value={1.0809}
+                    style={styles.amount}
+                    disabled={false}
+                  />
+                  {/* <span style={styles.amount}>{36.5284}</span> */}
+                </div>
+                <div style={styles.ticker}>{val.ticker}</div>
               </div>
             );
           })}
@@ -152,13 +170,35 @@ const styles = {
   icon: {
     marginLeft: 15,
   },
-  ticker: {
+  crypto: {
     margin: 15,
   },
-  tickerLabel: {
+  cryptolabel: {
     fontFamily: "Poppins, sans-serif",
     fontSize: 16,
     fontWeight: 400,
+    flex: 1,
+  },
+  amount: {
+    fontFamily: "Poppins, sans-serif",
+    fontWeight: 300,
+    fontSize: "22px",
+    width: 75,
+    // margin: 2,
+    // borderRadius: 10,
+    border: "0px",
+    // padding: "5px 10px",
+    // color: "rgba(20,31,42, 1.0)",
+    color: "rgba(59,232,176, 1)",
+    backgroundColor: "transparent",
+    // borderBottom: "1px solid black",
+  },
+  ticker: {
+    // border: "1px solid pink",
+    marginRight: 5,
+    color: "#333",
+    fontSize: 11,
+    fontWeight: 600,
   },
 };
 

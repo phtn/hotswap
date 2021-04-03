@@ -19,6 +19,14 @@ code {
   background-color: rgba(59,232,176, 1);
 }
 
-.custom-classname.react-toggle--checked:hover .react-toggle-track:hover {
-  background-color: rgba(59,232,176, 1);
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }

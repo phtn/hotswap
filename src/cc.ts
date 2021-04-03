@@ -15,20 +15,20 @@ import Ampleforth from "cryptocurrency-icons/svg/color/ampl.svg";
 import Aragon from "cryptocurrency-icons/svg/color/ant.svg";
 
 const currencies = [
-    { label: "Bitcoin", value: 0, icon: Bitcoin},
-    { label: "Polkadot", value: 1, icon: Dot},
-    { label: "Ethereum", value: 2, icon: Ethereum},
-    { label: "Tron", value: 3, icon: Tron},
-    { label: "Tether", value: 4, icon: Tether},
-    { label: "Cosmos", value: 5, icon: Cosmos},
-    { label: "Theta", value: 6, icon: Theta},
-    { label: "Icon", value: 7, icon: Icon},
-    { label: "Dash", value: 8, icon: Dash},
-    { label: "Filecoin", value: 9, icon: Filecoin},
-    { label: "XRP", value: 10, icon: XRP},
-    { label: "Tezos", value: 11, icon: Tezos},
-    { label: "Ampleforth", value: 12, icon: Ampleforth},
-    { label: "Aragon", value: 13, icon: Aragon},
+    { ticker: "BTC", label: "Bitcoin", value: 0, icon: Bitcoin},
+    { ticker: "DOT", label: "Polkadot", value: 1, icon: Dot},
+    { ticker: "ETH", label: "Ethereum", value: 2, icon: Ethereum},
+    { ticker: "TRX", label: "Tron", value: 3, icon: Tron},
+    { ticker: "USDT", label: "Tether", value: 4, icon: Tether},
+    { ticker: "ATOM", label: "Cosmos", value: 5, icon: Cosmos},
+    { ticker: "THETA", label: "Theta", value: 6, icon: Theta},
+    { ticker: "ICX", label: "Icon", value: 7, icon: Icon},
+    { ticker: "DASH", label: "Dash", value: 8, icon: Dash},
+    { ticker: "FIL", label: "Filecoin", value: 9, icon: Filecoin},
+    { ticker: "XRP", label: "XRP", value: 10, icon: XRP},
+    { ticker: "XTZ", label: "Tezos", value: 11, icon: Tezos},
+    { ticker: "AMPL", label: "Ampleforth", value: 12, icon: Ampleforth},
+    { ticker: "ANT", label: "Aragon", value: 13, icon: Aragon},
 ]
 
 export default currencies
