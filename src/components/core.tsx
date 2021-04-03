@@ -8,7 +8,7 @@ const Core = (props: CoreTypes) => {
   //   const { styles } = props;
   const [state, setState] = useState(0);
   return (
-    <div style={{ backgroundColor: "rgba(20,31,42, 1)" }}>
+    <div style={{ backgroundColor: "rgba(20,31,42, .985)" }}>
       <div style={styles.navbar}>
         <div style={styles.header}>
           hot<span style={{ fontWeight: "bolder" }}>Swap</span>
@@ -49,7 +49,7 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#333",
+    backgroundColor: "rgba(0,0,0, 0.3)",
   },
 
   navbar: {
@@ -57,7 +57,7 @@ const styles = {
     alignItems: "center",
     justifyContent: "center",
     height: 50,
-    border: "1px solid #222",
+    borderTop: "1px solid rgba(20,31,42, 1)",
   },
   allIn: {
     height: 100,
@@ -71,17 +71,6 @@ const styles = {
   },
   one: {
     width: 400,
-  },
-  results: {
-    display: "flex",
-    width: "100%",
-    height: "100vh",
-  },
-  on: {
-    color: "green",
-  },
-  off: {
-    color: "#eee",
   },
 };
 

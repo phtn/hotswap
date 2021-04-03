@@ -17,7 +17,7 @@ const Dev = (props: DevTypes) => {
   };
   return (
     <div style={styles.redbar}>
-      <div style={styles.nav}>
+      <div style={styles.navbar}>
         <div style={{ width: "150px", margin: "0px 10px" }}>
           <Select options={cryptoList} />
         </div>
@@ -99,7 +99,7 @@ const Dev = (props: DevTypes) => {
                   <input
                     type="number"
                     name="amount"
-                    value={1.0809}
+                    defaultValue={1.0809}
                     style={styles.amount}
                     disabled={false}
                   />
@@ -117,7 +117,7 @@ const Dev = (props: DevTypes) => {
 
 const styles = {
   devContainer: {
-    backgroundColor: "rgba(20,31,42, 0.7)",
+    backgroundColor: "rgba(20,31,42, 0.90)",
     height: "100%",
     display: "flex",
     justifyContent: "center",
@@ -130,21 +130,21 @@ const styles = {
     // display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    border: "0px solid #ccc",
+    // border: "0px solid #ccc",
     overflow: "auto",
   },
-  nav: {
+  navbar: {
     height: 50,
     width: "100%",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#444",
-    border: "1px solid #222",
+    borderTop: "1px solid rgba(20,31,42, 1)",
   },
   toolbar: {
     // color: "green",
-    borderBottom: "5px solid hotpink",
+    // borderBottom: "5px solid hotpink",
     justifyContent: "center",
     alignItems: "center",
     width: "100px",
@@ -152,7 +152,7 @@ const styles = {
   },
   redbar: {
     // color: "green",
-    borderBottom: "5px solid hotpink",
+    borderBottom: "5px solid rgba(20,31,42, .985)",
     justifyContent: "center",
     width: "100%",
     height: "100%",
@@ -169,6 +169,7 @@ const styles = {
   },
   icon: {
     marginLeft: 15,
+    opacity: "0.7",
   },
   crypto: {
     margin: 15,
@@ -182,10 +183,10 @@ const styles = {
   amount: {
     fontFamily: "Poppins, sans-serif",
     fontWeight: 300,
-    fontSize: "22px",
-    width: 75,
-    // margin: 2,
-    // borderRadius: 10,
+    fontSize: "20px",
+    width: 65,
+    // textAlign: "right",
+    // direction: "ltr",
     border: "0px",
     // padding: "5px 10px",
     // color: "rgba(20,31,42, 1.0)",
@@ -195,9 +196,11 @@ const styles = {
   },
   ticker: {
     // border: "1px solid pink",
-    marginRight: 5,
-    color: "#333",
-    fontSize: 11,
+    margin: "0px 10px",
+    // color: "rgba(20,31,42, 1)",
+    color: "#777",
+    fontFamily: "Poppins, sans-serif",
+    fontSize: 14,
     fontWeight: 600,
   },
 };

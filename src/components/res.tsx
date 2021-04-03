@@ -37,14 +37,14 @@ const Results = (props: ResTypes) => {
 
 const styles = {
   resContainer: {
-    borderBottom: "5px solid rgba(255,105,180, 1.0)",
+    borderBottom: "5px solid rgba(20,31,42, .985)",
     justifyContent: "center",
     alignItems: "center",
     width: "100%",
     height: "100%",
   },
   resContent: {
-    backgroundColor: "rgba(20,31,42, 0.7)",
+    backgroundColor: "rgba(20,31,42, 0.90)",
     height: "80vh",
     display: "flex",
     justifyContent: "center",
@@ -56,7 +56,7 @@ const styles = {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    border: "1px solid rgba(204,204,204, 0.1)",
+    borderBottom: "1px solid rgba(20,31,42, 1)",
   },
   navbar: {
     height: 50,
@@ -65,8 +65,8 @@ const styles = {
     // justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#444",
-    borderTop: "1px solid #222",
-    borderBottom: "1px solid #222",
+    // borderBottom: "1px solid #222",
+    borderTop: "1px solid rgba(20,31,42, 1)",
     paddingLeft: 10,
   },
   navlist: {
@@ -85,21 +85,6 @@ const styles = {
     // color: "rgba(59,232,176, 1)",
     color: "#eee",
     // width: 100,
-  },
-  toolbar: {
-    // color: "green",
-    borderBottom: "5px solid rgba(255,105,180, 0.2)",
-    justifyContent: "center",
-    alignItems: "center",
-    width: "100%",
-    height: "100%",
-  },
-  redbar: {
-    // color: "green",
-    borderBottom: "5px solid #999",
-    justifyContent: "center",
-    width: "100%",
-    height: "100%",
   },
 };
 

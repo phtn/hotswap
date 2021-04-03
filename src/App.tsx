@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import Select from "react-select";
 import cryptoList from "./cryptoList";
 import Dev from "./components/dev";
-import Core from "./core";
+import Core from "./components/core";
 import Results from "./components/res";
-import Sun from "./sun.svg";
+import RandomPatternSVG from "./random.svg";
+import Footer from "./components/footer";
 
 // const WIDTH = window.innerWidth;
 
@@ -36,7 +37,7 @@ function App() {
       <div
         style={{
           // alignItems: "center",
-          backgroundImage: `url(${Sun})`,
+          backgroundImage: `url(${RandomPatternSVG})`,
           // backgroundRepeat: "no-repeat",
 
           justifyContent: "center",
@@ -51,9 +52,7 @@ function App() {
       </div>
 
       {/* FOOTER */}
-      <div style={{ height: "94px", backgroundColor: "transparent" }}>
-        footer
-      </div>
+      <Footer />
     </div>
   );
 }
@@ -83,26 +82,6 @@ const styles = {
   allIn: {
     height: 100,
     width: "100%",
-  },
-  select: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    margin: 100,
-  },
-  one: {
-    width: 400,
-  },
-  results: {
-    display: "flex",
-    width: "100%",
-    height: "100vh",
-  },
-  on: {
-    color: "green",
-  },
-  off: {
-    color: "#eee",
   },
 };
 
