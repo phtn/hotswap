@@ -63,10 +63,17 @@ const Dev = (props: DevTypes) => {
             {/* <Select options={cryptoList} /> */}
             TOTAL BALANCE:
           </div>
-          <div style={{ marginLeft: 20 }}>
+          <div
+            style={{
+              marginLeft: 20,
+              // border: "1px solid pink",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
             <span
               style={{
-                fontFamily: "Poppins, sans-serif",
+                fontFamily: "Courier New",
                 fontSize: 18,
                 fontWeight: 600,
                 color: "pink",
@@ -80,14 +87,18 @@ const Dev = (props: DevTypes) => {
             </span>
           </div>
         </div>
+
+        {/* Middle Nav */}
         <div
           style={{
-            marginRight: 40,
+            marginRight: 0,
             display: "flex",
-            flex: 1,
+            // flex: 2,
+            height: 55,
+            width: 300,
             alignItems: "center",
             justifyContent: "center",
-            // width: 25,
+            // border: "1px solid pink",
           }}
         >
           <FaSlidersH
@@ -96,6 +107,7 @@ const Dev = (props: DevTypes) => {
           />
           <FaInfoCircle color={"#555"} />
         </div>
+
         <div style={{ display: "flex", justifyContent: "center" }}>
           <div style={styles.header}>
             hot<span style={{ fontWeight: "bolder" }}>Swap</span>
@@ -281,7 +293,7 @@ const styles = {
   },
   //  Width of the component
   navbar: {
-    height: 50,
+    height: 55,
     // width: "400px",
     display: "flex",
     // flex: "1",
