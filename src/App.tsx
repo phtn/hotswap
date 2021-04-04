@@ -45,10 +45,11 @@ function App() {
           flex: "3",
         }}
       >
-        {mobile ? <Dev dev={dev} setDev={setDev} /> : null}
+        {/* {mobile ? <Dev dev={dev} setDev={setDev} /> : null} */}
+        <Dev dev={dev} setDev={setDev} />
 
-        <Core styles={styles} />
-        <Results dev={dev} />
+        {/* <Core styles={styles} /> */}
+        {/* <Results dev={dev} /> */}
       </div>
 
       {/* FOOTER */}

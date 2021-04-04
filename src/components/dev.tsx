@@ -24,7 +24,11 @@ const Dev = (props: DevTypes) => {
         <div style={{ width: "150px", margin: "0px 10px" }}>
           <Select options={cryptoList} />
         </div>
-        <div style={{ flex: 1 }}></div>
+        <div style={{ flex: 1, display: "flex", justifyContent: "center" }}>
+          <div style={styles.header}>
+            hot<span style={{ fontWeight: "bolder" }}>Swap</span>
+          </div>
+        </div>
         <div
           style={{
             marginRight: 40,
@@ -177,15 +181,29 @@ const styles = {
     overflow: "auto",
   },
 
+  header: {
+    // width: "1000px",
+    height: "100%",
+    fontSize: 16,
+    // fontFamily: "Courier New",
+    fontFamily: "Poppins, sans-serif",
+    fontWeight: 100,
+    color: "hotpink",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    // backgroundColor: "rgba(0,0,0, 0.3)",
+  },
   //  Width of the component
   navbar: {
     height: 50,
-    width: "400px",
+    // width: "400px",
     display: "flex",
     // flex: "1",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#444",
+    backgroundColor: "rgba(20,31,42, 1)",
+
     borderTop: "1px solid rgba(20,31,42, 1)",
   },
   toolbar: {
