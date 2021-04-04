@@ -173,7 +173,7 @@ const Dev = (props: DevTypes) => {
           {currencies.map((val, idx) => {
             // setTotal(count * val.price);
             const fixedPrice: any = val.price;
-            const t = count * fixedPrice;
+            const t = count * fixedPrice.toFixed(2);
             console.log(typeof t);
 
             return (
@@ -198,7 +198,8 @@ const Dev = (props: DevTypes) => {
                     }}
                   >
                     {/* PRICE */}
-                    <span style={styles.dollar}>$</span> {comma(val.price)}
+                    <span style={styles.dollar}>$</span>{" "}
+                    {comma(fixedPrice.toFixed(2))}
                   </div>
                 </div>
                 <div style={{ flex: 1, display: "flex", width: "100%" }}></div>
