@@ -50,8 +50,9 @@ const Dev = (props: DevTypes) => {
         <div>
           <div
             style={{
-              width: "200px",
-              margin: "0px 20px",
+              width: 150,
+              display: "flex",
+              // margin: "0px 20px",
               // border: "1px solid pink",
               // height: 45,
               fontFamily: "Poppins, sans-serif",
@@ -61,11 +62,11 @@ const Dev = (props: DevTypes) => {
             }}
           >
             {/* <Select options={cryptoList} /> */}
-            TOTAL BALANCE:
+            TOTAL VALUE
           </div>
           <div
             style={{
-              marginLeft: 20,
+              // marginLeft: 20,
               // border: "1px solid pink",
               display: "flex",
               alignItems: "center",
@@ -101,11 +102,12 @@ const Dev = (props: DevTypes) => {
             // border: "1px solid pink",
           }}
         >
-          <FaSlidersH
+          {/* <FaSlidersH
             color={"#555"}
             style={{ marginRight: 20, cursor: "pointer" }}
           />
-          <FaInfoCircle color={"#555"} />
+          <FaInfoCircle color={"#555"} /> */}
+          {/* test */}
         </div>
 
         <div style={{ display: "flex", justifyContent: "center" }}>
@@ -174,7 +176,7 @@ const Dev = (props: DevTypes) => {
             // setTotal(count * val.price);
             const fixedPrice: any = val.price;
             const t = count * fixedPrice.toFixed(2);
-            console.log(typeof t);
+            // console.log(typeof t);
 
             return (
               <div key={idx} style={styles.cryptos}>
@@ -283,7 +285,7 @@ const styles = {
     // width: "1000px",
     height: "100%",
     fontSize: 16,
-    marginRight: 20,
+    // marginRight: 20,
     fontFamily: "Poppins, sans-serif",
     fontWeight: 100,
     color: "hotpink",
@@ -295,9 +297,9 @@ const styles = {
   //  Width of the component
   navbar: {
     height: 55,
-    // width: "400px",
+    padding: "0px 20px",
     display: "flex",
-    // flex: "1",
+    flex: "1",
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "rgba(20,31,42, 1)",
