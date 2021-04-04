@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Toggle from "react-toggle";
 import { FaSave, FaEdit, FaBitcoin } from "react-icons/fa";
 import cryptoList from "../cryptoList";
@@ -11,6 +12,8 @@ type DevTypes = {
 
 const Dev = (props: DevTypes) => {
   const { dev, setDev } = props;
+
+  const [defaultValue, setDefaultValue] = useState(0);
 
   const handleEditSave = () => {
     setDev(!dev);
@@ -85,27 +88,67 @@ const Dev = (props: DevTypes) => {
                   <img src={val.icon} />
                 </div>
                 <div style={styles.crypto}>
-                  <span style={styles.cryptolabel}>{val.label}</span>
-                </div>
-                {/* <hr style={{ height: "1px", width: 100, color: "#ccc" }} /> */}
-                <div style={{ flex: 1, display: "flex", width: "100%" }}></div>
-                <div
-                  style={
-                    {
+                  <div style={{ border: "0px solid papayawhip" }}>
+                    <span style={styles.cryptolabel}>{val.label}</span>
+                  </div>
+                  <div
+                    style={{
                       // border: "1px solid pink",
-                    }
-                  }
-                >
-                  <input
-                    type="number"
-                    name="amount"
-                    defaultValue={1.0809}
-                    style={styles.amount}
-                    disabled={false}
-                  />
-                  {/* <span style={styles.amount}>{36.5284}</span> */}
+                      height: "10px",
+                      padding: 0,
+                      margin: 0,
+                      fontFamily: "Poppins, sans-serif",
+                      fontWeight: 100,
+                      fontSize: 14,
+                    }}
+                  >
+                    $ 55,000.45
+                  </div>
                 </div>
-                <div style={styles.ticker}>{val.ticker}</div>
+                <div style={{ flex: 1, display: "flex", width: "100%" }}></div>
+                {/* Right side crypto data list */}
+                <div>
+                  <div
+                    style={{
+                      display: "flex",
+                    }}
+                  >
+                    <div
+                      style={
+                        {
+                          // border: "1px solid pink",
+                        }
+                      }
+                    >
+                      <input
+                        type="number"
+                        name="amount"
+                        defaultValue={defaultValue.toFixed(4)}
+                        style={styles.amount}
+                        disabled={false}
+                        width={300}
+                      />
+                    </div>
+                    <div style={styles.ticker}>{val.ticker}</div>
+                  </div>
+                  {/* balance label */}
+                  <div
+                    style={{
+                      // border: "1px solid papayawhip",
+                      height: 12,
+                      padding: 0,
+                      float: "right",
+                      marginRight: "10px",
+                      // position: "absolute",
+                      // width: 55,
+                      fontFamily: "Poppins, sans-serif",
+                      fontWeight: 100,
+                      fontSize: 14,
+                    }}
+                  >
+                    $ 23.45
+                  </div>
+                </div>
               </div>
             );
           })}
@@ -122,7 +165,7 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    // width: 200,
+    // width: 600,
   },
   devComp: {
     width: "100%",
@@ -133,10 +176,13 @@ const styles = {
     // border: "0px solid #ccc",
     overflow: "auto",
   },
+
+  //  Width of the component
   navbar: {
     height: 50,
-    width: "100%",
+    width: "400px",
     display: "flex",
+    // flex: "1",
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#444",
@@ -147,7 +193,7 @@ const styles = {
     // borderBottom: "5px solid hotpink",
     justifyContent: "center",
     alignItems: "center",
-    width: "100px",
+    // width: "100px",
     height: "100%",
   },
   redbar: {
@@ -158,13 +204,14 @@ const styles = {
     height: "100%",
   },
   cryptos: {
-    height: 70,
+    height: 85,
     color: "white",
-    borderBottom: "1px solid rgba(10,31,42, 0.3)",
+    borderBottom: "1px solid rgba(20,31,42, 1)",
     alignItems: "center",
     // justifyContent: "center",
     display: "flex",
     width: "100%",
+
     // backgroundColor: "red",
   },
   icon: {
@@ -173,6 +220,8 @@ const styles = {
   },
   crypto: {
     margin: 15,
+    // border: "1px solid cyan",
+    height: 50,
   },
   cryptolabel: {
     fontFamily: "Poppins, sans-serif",
@@ -184,7 +233,7 @@ const styles = {
     fontFamily: "Poppins, sans-serif",
     fontWeight: 300,
     fontSize: "20px",
-    width: 65,
+    width: 95,
     // textAlign: "right",
     // direction: "ltr",
     border: "0px",
@@ -200,8 +249,10 @@ const styles = {
     // color: "rgba(20,31,42, 1)",
     color: "#777",
     fontFamily: "Poppins, sans-serif",
-    fontSize: 14,
+    fontSize: 16,
     fontWeight: 600,
+    display: "flex",
+    alignItems: "center",
   },
 };
 
