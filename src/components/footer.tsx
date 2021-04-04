@@ -1,7 +1,7 @@
 // import Select from "react-select";
+// import cryptolist from "../cryptoList";
 import { useState } from "react";
 import Flat from "../stripes.svg";
-import cryptolist from "../cryptoList";
 import { FaPlus } from "react-icons/fa";
 
 const Footer = () => {
@@ -11,35 +11,38 @@ const Footer = () => {
     setPower(!power);
   }
 
+  function handleAddToken() {
+    if (power) {
+      return "#555";
+    }
+    return "#ccc";
+  }
+
+  function handlePlus() {
+    if (power) {
+      return "rgb(0, 131, 116)";
+    }
+    return "hotpink";
+  }
+
   return (
     <div style={styles.container}>
       <div style={styles.content}>
-        <div
-          style={{
-            // transform: "rotate(180deg)",
-            width: "150px",
-            marginRight: "100px",
-            fontSize: 14,
-            fontWeight: 100,
-            color: "#555",
-          }}
-        >
-          {/* <Select options={cryptolist} style={{ backgroundColor: "#ccc" }} /> */}
-          by <span style={{ fontWeight: 400 }}>phtn458</span>
+        <div style={styles.credit}>
+          by <span style={styles.phtn458}>phtn458</span>
         </div>
-        {/* <Button push color={"pink"} onClick={()=> console.log('login')} /> */}
         <span
-          style={{ color: power ? "#555" : "#ccc", cursor: "pointer" }}
+          style={Object.assign({}, styles.addtoken, {
+            color: handleAddToken(),
+          })}
           onClick={handleSwitch}
         >
           Add token
         </span>
         <FaPlus
-          style={{
-            color: power ? "rgb(0, 131, 116)" : "hotpink",
-            marginLeft: 10,
-            cursor: "pointer",
-          }}
+          style={Object.assign({}, styles.plus, {
+            color: handlePlus(),
+          })}
           onClick={handleSwitch}
         />
       </div>
@@ -69,6 +72,19 @@ const styles = {
     fontWeight: 600,
     fontSize: 14,
     pointer: "cursor",
+  },
+  credit: {
+    width: "150px",
+    marginRight: "100px",
+    fontSize: 14,
+    fontWeight: 100,
+    color: "#555",
+  },
+  phtn458: { fontWeight: 400 },
+  addtoken: { cursor: "pointer" },
+  plus: {
+    marginLeft: 10,
+    cursor: "pointer",
   },
 };
 
