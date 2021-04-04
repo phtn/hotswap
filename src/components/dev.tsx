@@ -29,6 +29,7 @@ const Dev = (props: DevTypes) => {
   useEffect(() => {
     // handleInputChange();
     // setTotal(count * price)
+    // setTotal()
     return () => {
       null;
     };
@@ -105,6 +106,10 @@ const Dev = (props: DevTypes) => {
 
         <div style={styles.devComp}>
           {currencies.map((val, idx) => {
+            // setTotal(count * val.price);
+            const fixedPrice: any = val.price.toFixed(4);
+            const t = count * fixedPrice;
+
             return (
               <div key={idx} style={styles.cryptos}>
                 <div style={styles.icon}>
@@ -136,6 +141,8 @@ const Dev = (props: DevTypes) => {
                   <div
                     style={{
                       display: "flex",
+                      // border: "1px solid red",
+                      marginTop: -20,
                     }}
                   >
                     <div
@@ -174,7 +181,7 @@ const Dev = (props: DevTypes) => {
                     }}
                   >
                     <span style={styles.dollar}>$</span>
-                    {count * val.price}
+                    {comma(t)}
                   </div>
                 </div>
               </div>

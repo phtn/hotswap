@@ -15,7 +15,7 @@ import Ampleforth from "cryptocurrency-icons/svg/color/ampl.svg";
 import Aragon from "cryptocurrency-icons/svg/color/ant.svg";
 
 const currencies = [
-    { ticker: "BTC", label: "Bitcoin", value: 0, price: 5745.65, icon: Bitcoin},
+    { ticker: "BTC", label: "Bitcoin", value: 0, price: 57452.65, icon: Bitcoin},
     { ticker: "DOT", label: "Polkadot", value: 1, price: 44.38, icon: Dot},
     { ticker: "ETH", label: "Ethereum", value: 2, price: 0, icon: Ethereum},
     { ticker: "TRX", label: "Tron", value: 3, price: 0, icon: Tron},
