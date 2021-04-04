@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Toggle from "react-toggle";
-import { FaSave, FaEdit, FaBitcoin } from "react-icons/fa";
+import { FaSave, FaInfoCircle, FaSlidersH } from "react-icons/fa";
 import cryptoList from "../cryptoList";
 import currencies from "../cc";
 import Select from "react-select";
@@ -15,16 +15,22 @@ const Dev = (props: DevTypes) => {
 
   const [price, setPrice] = useState(57435.35);
   const [count, setCount] = useState(0);
-  const [total, setTotal] = useState(0);
+  // const [total, setTotal] = useState(0);
 
   function comma(x: number) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
 
+  function getTotal(t: any) {
+    if (t) {
+      return null;
+    }
+  }
+
   const handleInputChange = (e: any) => {
     setCount(e.target.value);
 
-    console.log(typeof e.target.value);
+    // console.log(typeof e.target.value);
   };
   useEffect(() => {
     // handleInputChange();
@@ -41,15 +47,62 @@ const Dev = (props: DevTypes) => {
   return (
     <div style={styles.redbar}>
       <div style={styles.navbar}>
-        <div style={{ width: "150px", margin: "0px 10px" }}>
-          <Select options={cryptoList} />
+        <div>
+          <div
+            style={{
+              width: "200px",
+              margin: "0px 20px",
+              // border: "1px solid pink",
+              // height: 45,
+              fontFamily: "Poppins, sans-serif",
+              fontWeight: 600,
+              fontSize: 10,
+              color: "#555",
+            }}
+          >
+            {/* <Select options={cryptoList} /> */}
+            TOTAL BALANCE:
+          </div>
+          <div style={{ marginLeft: 20 }}>
+            <span
+              style={{
+                fontFamily: "Poppins, sans-serif",
+                fontSize: 18,
+                fontWeight: 600,
+                color: "pink",
+                marginRight: 10,
+              }}
+            >
+              $
+            </span>
+            <span style={{ color: "#ccc", fontSize: 24, fontWeight: 100 }}>
+              {comma(count)}
+            </span>
+          </div>
         </div>
-        <div style={{ flex: 1, display: "flex", justifyContent: "center" }}>
+        <div
+          style={{
+            marginRight: 40,
+            display: "flex",
+            flex: 1,
+            alignItems: "center",
+            justifyContent: "center",
+            // width: 25,
+          }}
+        >
+          <FaSlidersH
+            color={"#555"}
+            style={{ marginRight: 20, cursor: "pointer" }}
+          />
+          <FaInfoCircle color={"#555"} />
+        </div>
+        <div style={{ display: "flex", justifyContent: "center" }}>
           <div style={styles.header}>
             hot<span style={{ fontWeight: "bolder" }}>Swap</span>
           </div>
         </div>
-        <div
+
+        {/* <div
           style={{
             marginRight: 40,
             display: "flex",
@@ -58,7 +111,7 @@ const Dev = (props: DevTypes) => {
             // width: 25,
           }}
         >
-          {/* <Toggle
+          <Toggle
             className="custom-classname"
             checked={dev}
             aria-label="No label tag"
@@ -84,7 +137,7 @@ const Dev = (props: DevTypes) => {
               ),
             }}
             // style={{ backgroundColor: "black", marginRight: 10 }}
-          /> */}
+          /> 
           <span
             style={{
               marginLeft: 20,
@@ -99,7 +152,7 @@ const Dev = (props: DevTypes) => {
           >
             Add
           </span>
-        </div>
+        </div> */}
       </div>
       <div style={styles.devContainer}>
         {/* // DEV Component */}
@@ -107,8 +160,9 @@ const Dev = (props: DevTypes) => {
         <div style={styles.devComp}>
           {currencies.map((val, idx) => {
             // setTotal(count * val.price);
-            const fixedPrice: any = val.price.toFixed(4);
+            const fixedPrice: any = val.price;
             const t = count * fixedPrice;
+            console.log(typeof t);
 
             return (
               <div key={idx} style={styles.cryptos}>
@@ -216,7 +270,7 @@ const styles = {
     // width: "1000px",
     height: "100%",
     fontSize: 16,
-    // fontFamily: "Courier New",
+    marginRight: 20,
     fontFamily: "Poppins, sans-serif",
     fontWeight: 100,
     color: "hotpink",

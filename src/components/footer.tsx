@@ -1,6 +1,7 @@
 import Select from "react-select";
 import Flat from "../stripes.svg";
 import cryptolist from "../cryptoList";
+import { FaSignInAlt } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -8,15 +9,19 @@ const Footer = () => {
       <div style={styles.content}>
         <div
           style={{
-            transform: "rotate(180deg)",
+            // transform: "rotate(180deg)",
             width: "150px",
-            margin: "0px 10px",
+            marginRight: "100px",
+            fontSize: 14,
+            color: "#555",
           }}
         >
-          <Select options={cryptolist} style={{ backgroundColor: "#ccc" }} />
+          {/* <Select options={cryptolist} style={{ backgroundColor: "#ccc" }} /> */}
+          by <span style={{ fontWeight: 400 }}>phtn458</span>
         </div>
         {/* <Button push color={"pink"} onClick={()=> console.log('login')} /> */}
         login
+        <FaSignInAlt style={{ color: "hotpink", marginLeft: 10 }} />
       </div>
     </div>
   );
@@ -42,7 +47,7 @@ const styles = {
     color: "#eee",
     fontFamily: "Poppins, sans-serif",
     fontWeight: 100,
-    fontSize: 24,
+    fontSize: 18,
   },
 };
 
