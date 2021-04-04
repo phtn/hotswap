@@ -15,20 +15,20 @@ import Ampleforth from "cryptocurrency-icons/svg/color/ampl.svg";
 import Aragon from "cryptocurrency-icons/svg/color/ant.svg";
 
 const currencies = [
-    { ticker: "BTC", label: "Bitcoin", value: 0, icon: Bitcoin},
-    { ticker: "DOT", label: "Polkadot", value: 1, icon: Dot},
-    { ticker: "ETH", label: "Ethereum", value: 2, icon: Ethereum},
-    { ticker: "TRX", label: "Tron", value: 3, icon: Tron},
-    { ticker: "USDT", label: "Tether", value: 4, icon: Tether},
-    { ticker: "ATOM", label: "Cosmos", value: 5, icon: Cosmos},
-    { ticker: "THETA", label: "Theta", value: 6, icon: Theta},
-    { ticker: "ICX", label: "Icon", value: 7, icon: Icon},
-    { ticker: "DASH", label: "Dash", value: 8, icon: Dash},
-    { ticker: "FIL", label: "Filecoin", value: 9, icon: Filecoin},
-    { ticker: "XRP", label: "XRP", value: 10, icon: XRP},
-    { ticker: "XTZ", label: "Tezos", value: 11, icon: Tezos},
-    { ticker: "AMPL", label: "Ampleforth", value: 12, icon: Ampleforth},
-    { ticker: "ANT", label: "Aragon", value: 13, icon: Aragon},
+    { ticker: "BTC", label: "Bitcoin", value: 0, price: 5745.65, icon: Bitcoin},
+    { ticker: "DOT", label: "Polkadot", value: 1, price: 44.38, icon: Dot},
+    { ticker: "ETH", label: "Ethereum", value: 2, price: 0, icon: Ethereum},
+    { ticker: "TRX", label: "Tron", value: 3, price: 0, icon: Tron},
+    { ticker: "USDT", label: "Tether", value: 4, price: 0, icon: Tether},
+    { ticker: "ATOM", label: "Cosmos", value: 5, price: 0, icon: Cosmos},
+    { ticker: "THETA", label: "Theta", value: 6, price: 0, icon: Theta},
+    { ticker: "ICX", label: "Icon", value: 7, price: 0, icon: Icon},
+    { ticker: "DASH", label: "Dash", value: 8, price: 0, icon: Dash},
+    { ticker: "FIL", label: "Filecoin", value: 9, price: 0, icon: Filecoin},
+    { ticker: "XRP", label: "XRP", value: 10, price: 0, icon: XRP},
+    { ticker: "XTZ", label: "Tezos", value: 11, price: 0, icon: Tezos},
+    { ticker: "AMPL", label: "Ampleforth", value: 12, price: 0, icon: Ampleforth},
+    { ticker: "ANT", label: "Aragon", value: 13, price: 0, icon: Aragon},
 ]
 
 export default currencies

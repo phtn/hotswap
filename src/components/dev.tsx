@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Toggle from "react-toggle";
 import { FaSave, FaEdit, FaBitcoin } from "react-icons/fa";
 import cryptoList from "../cryptoList";
@@ -13,7 +13,26 @@ type DevTypes = {
 const Dev = (props: DevTypes) => {
   const { dev, setDev } = props;
 
-  const [defaultValue, setDefaultValue] = useState(0);
+  const [price, setPrice] = useState(57435.35);
+  const [count, setCount] = useState(0);
+  const [total, setTotal] = useState(0);
+
+  function comma(x: number) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+
+  const handleInputChange = (e: any) => {
+    setCount(e.target.value);
+
+    console.log(typeof e.target.value);
+  };
+  useEffect(() => {
+    // handleInputChange();
+    // setTotal(count * price)
+    return () => {
+      null;
+    };
+  });
 
   const handleEditSave = () => {
     setDev(!dev);
@@ -104,9 +123,11 @@ const Dev = (props: DevTypes) => {
                       fontFamily: "Poppins, sans-serif",
                       fontWeight: 100,
                       fontSize: 14,
+                      letterSpacing: 1,
                     }}
                   >
-                    $ 55,000.45
+                    {/* PRICE */}
+                    <span style={styles.dollar}>$</span> {comma(val.price)}
                   </div>
                 </div>
                 <div style={{ flex: 1, display: "flex", width: "100%" }}></div>
@@ -127,10 +148,11 @@ const Dev = (props: DevTypes) => {
                       <input
                         type="number"
                         name="amount"
-                        defaultValue={defaultValue.toFixed(4)}
+                        placeholder={(0).toFixed(4)}
                         style={styles.amount}
                         disabled={false}
                         width={300}
+                        onChange={handleInputChange}
                       />
                     </div>
                     <div style={styles.ticker}>{val.ticker}</div>
@@ -148,9 +170,11 @@ const Dev = (props: DevTypes) => {
                       fontFamily: "Poppins, sans-serif",
                       fontWeight: 100,
                       fontSize: 14,
+                      letterSpacing: 1,
                     }}
                   >
-                    $ 23.45
+                    <span style={styles.dollar}>$</span>
+                    {count * val.price}
                   </div>
                 </div>
               </div>
@@ -271,6 +295,13 @@ const styles = {
     fontWeight: 600,
     display: "flex",
     alignItems: "center",
+  },
+  dollar: {
+    fontWeight: 600,
+    fontSize: 18,
+    fontFamily: "Courier New",
+    color: "#008374",
+    marginRight: 5,
   },
 };
 
